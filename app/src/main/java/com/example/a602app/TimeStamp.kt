@@ -1,6 +1,6 @@
 package com.example.a602app
 //This class holds timestamp information for media, e.g. youtube video or spotify audio
-class TimeStamp constructor(var _minutes : Int, var _seconds : Int)
+class TimeStamp constructor(var _minutes : Int = 0, var _seconds : Int = 0)
 {
     var minutes : Int = 0
     var seconds : Int = 0
@@ -14,5 +14,6 @@ class TimeStamp constructor(var _minutes : Int, var _seconds : Int)
     {
         this.minutes = _mins
         this.seconds = _secs
+
     }
 }

@@ -16,8 +16,8 @@ class MainActivity : AppCompatActivity()
 {
 
     //Test data
-    var testStamp = TimeStamp(0,30)
-    var newLink = YouTubeConnect("https://www.youtube.com/watch?v=48uAQYf3Uhc", testStamp)
+    var testStamp = TimeStamp(9,2)
+    var newLink = YouTubeConnect("https://youtu.be/48uAQYf3Uhc?t=31", 8,2)
 
 
     override fun onCreate(savedInstanceState: Bundle?)
@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity()
         }
     }
 
-    fun clickedBtn(yt:YouTubeConnect)
+    fun clickedBtn(yt:YouTubeConnect)//feed in a YTC object to bring up video
     {
         var openWebPage = Intent(Intent.ACTION_VIEW)
         openWebPage.data = Uri.parse(yt.url)
