@@ -1,5 +1,6 @@
 package com.example.a602app;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Handler;
 import android.os.Message;
@@ -21,16 +22,22 @@ public class KobeActivity extends AppCompatActivity {
     MediaPlayer mp;
     int totalTime;
 
+    private Button button;
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_kobe);
 
         playBtn = (Button) findViewById(R.id.playBtn);
         elapsedTimeLabel = (TextView) findViewById(R.id.elapsedTimeLabel);
         remainingTimeLabel = (TextView) findViewById(R.id.remainingTimeLabel);
 
         // Media Player
+
 
         mp = MediaPlayer.create(this, R.raw.hero);
         mp.setLooping(true);
@@ -96,12 +103,25 @@ public class KobeActivity extends AppCompatActivity {
                         msg.what = mp.getCurrentPosition();
                         handler.sendMessage(msg);
                         Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                    }
+                    } catch (InterruptedException e) {}
                 }
             }
         }).start();
 
+        button = (Button)findViewById(R.id.buttonList);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openSongsList();
+            }
+        });
+
+    }
+
+
+    public void openSongsList(){
+        Intent intent = new Intent(this, MusicPlayer.class);
+        startActivity(intent);
     }
 
     private Handler handler = new Handler() {
@@ -115,7 +135,7 @@ public class KobeActivity extends AppCompatActivity {
             String elapsedTime = createTimeLabel(currentPosition);
             elapsedTimeLabel.setText(elapsedTime);
 
-            String remainingTime = createTimeLabel(totalTime - currentPosition);
+            String remainingTime = createTimeLabel(totalTime-currentPosition);
             remainingTimeLabel.setText("- " + remainingTime);
         }
     };
