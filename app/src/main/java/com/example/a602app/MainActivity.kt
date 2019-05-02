@@ -30,6 +30,11 @@ class MainActivity : AppCompatActivity()
             d("Team", "Button 1 was pressed")
             clickedBtn(newLink)
         }
+
+        button2.setOnClickListener {
+            clickedBtn2()
+        }
+
     }
 
     fun clickedBtn(yt:YouTubeConnect)//feed in a YTC object to bring up video
@@ -37,5 +42,11 @@ class MainActivity : AppCompatActivity()
         var openWebPage = Intent(Intent.ACTION_VIEW)
         openWebPage.data = Uri.parse(yt.url)
         startActivity(openWebPage)
+    }
+
+    fun clickedBtn2()//Open Kobe Activity
+    {
+        var intent = Intent(this, KobeActivity::class.java)
+        startActivity(intent)
     }
 }
