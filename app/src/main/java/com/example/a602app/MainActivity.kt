@@ -39,9 +39,8 @@ class MainActivity : AppCompatActivity()
 
     fun clickedBtn(yt:YouTubeConnect)//feed in a YTC object to bring up video
     {
-        var openWebPage = Intent(Intent.ACTION_VIEW)
-        openWebPage.data = Uri.parse(yt.url)
-        startActivity(openWebPage)
+        var intent = Intent(this, YouTubeActivity::class.java)
+        startActivity(intent)
     }
 
     fun clickedBtn2()//Open Kobe Activity
