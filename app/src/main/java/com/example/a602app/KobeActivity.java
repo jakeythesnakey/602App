@@ -41,7 +41,7 @@ public class KobeActivity extends AppCompatActivity {
 
         mp = MediaPlayer.create(this, R.raw.hero);
         mp.setLooping(true);
-        mp.seekTo(0);
+        mp.seekTo(1);
         mp.setVolume(0.5f, 0.5f);
         totalTime = mp.getDuration();
 
