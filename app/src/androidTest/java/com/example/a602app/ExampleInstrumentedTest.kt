@@ -4,12 +4,14 @@ import android.support.test.InstrumentationRegistry
 import android.support.test.espresso.Espresso.onView
 import android.support.test.espresso.action.ViewActions.click
 import android.support.test.espresso.matcher.ViewMatchers.withId
+import android.support.test.rule.ActivityTestRule
 import android.support.test.runner.AndroidJUnit4
 
 import org.junit.Test
 import org.junit.runner.RunWith
 
 import org.junit.Assert.*
+import org.junit.Rule
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -18,6 +20,11 @@ import org.junit.Assert.*
  */
 @RunWith(AndroidJUnit4::class)
 class ExampleInstrumentedTest {
+
+    @Rule
+    @JvmField
+    val rule: ActivityTestRule<MainActivity> = ActivityTestRule(MainActivity::class.java)
+
     @Test
     fun useAppContext() {
         // Context of the app under test.
@@ -28,6 +35,12 @@ class ExampleInstrumentedTest {
     @Test
     fun user_press_button_1()
     {
-        onView(withId(R.id.button1)).perform(cl)
+        onView(withId(R.id.button1)).perform(click())
+    }
+
+    @Test
+    fun user_press_button_2()
+    {
+        onView(withId(R.id.button2)).perform(click())
     }
 }
