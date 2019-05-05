@@ -35,6 +35,10 @@ public class KobeActivity extends AppCompatActivity {
     public String music = SONG_PLAYING;
 
 
+    public void onBackPressed() {
+        super.onBackPressed();
+        mp.stop();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,14 +56,23 @@ public class KobeActivity extends AppCompatActivity {
 
 //        URI uri = new File(ss).toURI();
 
-        Uri uri1 = Uri.parse(ss);
+//        Uri uri1 = Uri.parse(ss);
 
 
 
 
-        System.out.println("-----------------the uri is ::::::::::::::::"+ss+":::::::::::::::::::::::::"+uri1);
+        System.out.println("-----------------the uri is ::::::::::::::::"+ss+":::::::::::::::::::::::::");
 
-        mp= MediaPlayer.create(this,uri1);
+
+        if(s.equals("hero")){
+                    mp = MediaPlayer.create(this,R.raw.hero);
+        }else if(s.equals("fresh_eyes")){
+            mp = MediaPlayer.create(this, R.raw.fresh_eyes);
+        }else if(s.equals("love_yourself")){
+            mp=MediaPlayer.create(this,R.raw.love_yourself);
+        }
+
+//        mp= MediaPlayer.create(this,uri1);
 //        mp = MediaPlayer.create(this,R.raw.hero);
 
 
@@ -132,10 +145,12 @@ public class KobeActivity extends AppCompatActivity {
         }).start();
 
         button = (Button)findViewById(R.id.buttonList);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openSongsList();
+                if(mp.isPlaying()) mp.pause();
             }
         });
 
