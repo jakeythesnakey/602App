@@ -38,7 +38,7 @@ class YouTubeActivity : AppCompatActivity()
     fun clickedBtn()//feed in a YTC object to bring up video
     {
         //Default data (I hope you like Brooklyn 99)
-        var newLink = YouTubeConnect("https://youtu.be/48uAQYf3Uhc?t=31", 8,2)
+        var newLink = YouTubeConnect("https://youtu.be/48uAQYf3Uhc", 8,2)
 
         //Attach variables to text input fields
         addressText = findViewById(R.id.address)

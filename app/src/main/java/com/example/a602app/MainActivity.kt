@@ -5,6 +5,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.util.Log.d
 import android.view.Menu
 import android.view.MenuItem
