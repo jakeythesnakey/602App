@@ -14,30 +14,26 @@ import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity()
 {
-
-    //Test data
-    var testStamp = TimeStamp(9,2)
-    var newLink = YouTubeConnect("https://youtu.be/48uAQYf3Uhc?t=31", 8,2)
-
-
+    //This function sets up the main screen of the app and attaches functionality
     override fun onCreate(savedInstanceState: Bundle?)
     {
-        super.onCreate(savedInstanceState)
+        super.onCreate(savedInstanceState)//call super
         setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
+        setSupportActionBar(toolbar)//setup toolbar
 
+        //Sets first button to take user to youtube section
         button1.setOnClickListener {
-            d("Team", "Button 1 was pressed")
-            clickedBtn(newLink)
+            clickedBtn()
         }
 
+        //Sets second button to take user to local player section
         button2.setOnClickListener {
             clickedBtn2()
         }
 
     }
 
-    fun clickedBtn(yt:YouTubeConnect)//feed in a YTC object to bring up video
+    fun clickedBtn()//Open youtube activity
     {
         var intent = Intent(this, YouTubeActivity::class.java)
         startActivity(intent)
