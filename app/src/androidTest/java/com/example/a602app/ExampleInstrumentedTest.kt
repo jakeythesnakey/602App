@@ -28,6 +28,6 @@ class ExampleInstrumentedTest {
     @Test
     fun user_press_button_1()
     {
-        onView(withId(R.id.button1)).perform(cl)
+//        onView(withId(R.id.button1)).perform(cl)
     }
 }

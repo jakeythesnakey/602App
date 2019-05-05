@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity()
 
     fun clickedBtn2()//Open Kobe Activity
     {
-        var intent = Intent(this, KobeActivity::class.java)
+        var intent = Intent(this, MusicPlayer::class.java)
         startActivity(intent)
     }
 }

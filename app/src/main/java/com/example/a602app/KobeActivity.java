@@ -2,15 +2,23 @@ package com.example.a602app;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import com.example.a602app.MusicPlayer;
 
+import java.io.File;
+import java.net.URI;
+import java.net.URISyntaxException;
+
+import static com.example.a602app.MusicPlayer.SONG_PLAYING;
 
 public class KobeActivity extends AppCompatActivity {
 
@@ -24,6 +32,7 @@ public class KobeActivity extends AppCompatActivity {
 
     private Button button;
 
+    public String music = SONG_PLAYING;
 
 
 
@@ -37,9 +46,23 @@ public class KobeActivity extends AppCompatActivity {
         remainingTimeLabel = (TextView) findViewById(R.id.remainingTimeLabel);
 
         // Media Player
+        String s = music;
+        String ss = "R.raw."+s;
+//        MediaStore.Audio.Media m = new MediaStore.Audio.Media(new File(s).toURI());
+
+//        URI uri = new File(ss).toURI();
+
+        Uri uri1 = Uri.parse(ss);
 
 
-        mp = MediaPlayer.create(this, R.raw.hero);
+
+
+        System.out.println("-----------------the uri is ::::::::::::::::"+ss+":::::::::::::::::::::::::"+uri1);
+
+        mp= MediaPlayer.create(this,uri1);
+//        mp = MediaPlayer.create(this,R.raw.hero);
+
+
         mp.setLooping(true);
         mp.seekTo(1);
         mp.setVolume(0.5f, 0.5f);

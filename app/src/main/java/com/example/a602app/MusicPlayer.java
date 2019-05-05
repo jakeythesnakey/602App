@@ -1,5 +1,6 @@
 package com.example.a602app;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -20,6 +21,9 @@ public class MusicPlayer extends AppCompatActivity {
 
     ArrayAdapter arrayAdapter;
     MediaPlayer mediaPlayer;
+
+    public static String SONG_PLAYING;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,18 +47,33 @@ public class MusicPlayer extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
 
-                if(mediaPlayer != null){
-                    mediaPlayer.release();
-                }
 
-                int resId = getResources().getIdentifier(arrayList.get(i),"raw",getPackageName());
-                mediaPlayer = MediaPlayer.create(MusicPlayer.this,resId);
-                mediaPlayer.start();
+                SONG_PLAYING = arrayList.get(i);
+
+                openPlayerMedia();
+//                System.out.println(SONG_PLAYING);
+
+
+
+//                if(mediaPlayer != null){
+//                    mediaPlayer.release();
+//                }
+//
+//                int resId = getResources().getIdentifier(arrayList.get(i),"raw",getPackageName());
+//                mediaPlayer = MediaPlayer.create(MusicPlayer.this,resId);
+//                mediaPlayer.start();
             }
         });
 
 
     }
+
+    public void openPlayerMedia(){
+        Intent intent = new Intent(this, KobeActivity.class);
+        startActivity(intent);
+    }
+
+
 
     @Override
     public void onBackPressed() {
