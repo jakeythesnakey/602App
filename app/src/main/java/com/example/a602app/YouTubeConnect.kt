@@ -16,6 +16,11 @@ class YouTubeConnect constructor(var _url: String, var _timeStamp: TimeStamp = T
         this.url = _url
         this.timeStamp = _timeStamp
 
+        linkConstruct()
+    }
+
+    fun linkConstruct()
+    {
         //determines whether youtube link is a full address or a shortlink and applies syntax correctly
         var connector = "&t="
         if (!url.contains("?"))

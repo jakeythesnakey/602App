@@ -50,13 +50,12 @@ class YouTubeActivity : AppCompatActivity()
         var openWebPage = Intent(Intent.ACTION_VIEW)//Creates new intent to open a new activity/screen
         openWebPage.data = Uri.parse(newLink.url)//sets the target of the new screen to the given youtube link
 
-        if (openWebPage.resolveActivity(getPackageManager()) != null) {
+        if (openWebPage.resolveActivity(getPackageManager()) != null) {//Safely checks if activity will resolve correctly
             startActivity(openWebPage)//starts the new activity
         }
         else{
             addressText.setText("Not a YouTube address")
         }
-        //startActivity(openWebPage)
 
     }
 }
