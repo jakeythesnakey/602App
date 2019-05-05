@@ -56,6 +56,7 @@ public class KobeActivity extends AppCompatActivity {
      *  set content view activity xml file
      */
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kobe);
 
@@ -63,19 +64,29 @@ public class KobeActivity extends AppCompatActivity {
         elapsedTimeLabel = (TextView) findViewById(R.id.elapsedTimeLabel);
         remainingTimeLabel = (TextView) findViewById(R.id.remainingTimeLabel);
 
+
+
+        TextView textView;
+        textView = findViewById(R.id.textViewName);
+        textView.setText(SONG_PLAYING);
+
+
+
+
+
         // Media Player
         String s = music;
-        String ss = "R.raw."+s;
+//        String ss = "R.raw."+s;
 //        MediaStore.Audio.Media m = new MediaStore.Audio.Media(new File(s).toURI());
 
 //        URI uri = new File(ss).toURI();
 
 //        Uri uri1 = Uri.parse(ss);
-        System.out.println("-----------------the uri is ::::::::::::::::"+ss+":::::::::::::::::::::::::");
+        System.out.println("-----------------the uri is ::::::::::::::::"+s+":::::::::::::::::::::::::");
 
 //play selected music
         if(s.equals("hero")){
-                    mp = MediaPlayer.create(this,R.raw.hero);
+            mp = MediaPlayer.create(this,R.raw.hero);
         }else if(s.equals("fresh_eyes")){
             mp = MediaPlayer.create(this, R.raw.fresh_eyes);
         }else if(s.equals("love_yourself")){
@@ -254,4 +265,8 @@ public class KobeActivity extends AppCompatActivity {
         }
 
     }
+
+
+
+
 }
