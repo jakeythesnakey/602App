@@ -85,6 +85,9 @@ public class KobeActivity extends AppCompatActivity {
         System.out.println("-----------------the uri is ::::::::::::::::"+s+":::::::::::::::::::::::::");
 
 //play selected music
+        if(s==null){
+            s = "hero";
+        }
         if(s.equals("hero")){
             mp = MediaPlayer.create(this,R.raw.hero);
         }else if(s.equals("fresh_eyes")){
