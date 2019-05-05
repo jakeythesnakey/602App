@@ -22,6 +22,14 @@ import static com.example.a602app.MusicPlayer.SONG_PLAYING;
 
 public class KobeActivity extends AppCompatActivity {
 
+    /**
+     * @param playbtn
+     * @param positionBar
+     * @param volumeBar
+     * @param elapsedTiemLabel
+     * @param remainingTimeLabel
+     * @param mp
+     */
     Button playBtn;
     SeekBar positionBar;
     SeekBar volumeBar;
@@ -34,13 +42,19 @@ public class KobeActivity extends AppCompatActivity {
 
     public String music = SONG_PLAYING;
 
-
+    /**
+     * press back and stops music player
+     */
     public void onBackPressed() {
         super.onBackPressed();
         mp.stop();
     }
 
     @Override
+    /**
+     *  @param savedInstanceState
+     *  set content view activity xml file
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kobe);
@@ -57,13 +71,9 @@ public class KobeActivity extends AppCompatActivity {
 //        URI uri = new File(ss).toURI();
 
 //        Uri uri1 = Uri.parse(ss);
-
-
-
-
         System.out.println("-----------------the uri is ::::::::::::::::"+ss+":::::::::::::::::::::::::");
 
-
+//play selected music
         if(s.equals("hero")){
                     mp = MediaPlayer.create(this,R.raw.hero);
         }else if(s.equals("fresh_eyes")){
@@ -75,7 +85,7 @@ public class KobeActivity extends AppCompatActivity {
 //        mp= MediaPlayer.create(this,uri1);
 //        mp = MediaPlayer.create(this,R.raw.hero);
 
-
+//set the default time volume
         mp.setLooping(true);
         mp.seekTo(1);
         mp.setVolume(0.5f, 0.5f);
@@ -86,6 +96,13 @@ public class KobeActivity extends AppCompatActivity {
         positionBar.setMax(totalTime);
         positionBar.setOnSeekBarChangeListener(
                 new SeekBar.OnSeekBarChangeListener() {
+
+                    /**
+                     *
+                     * @param seekBar
+                     * @param progress
+                     * @param fromUser
+                     */
                     @Override
                     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                         if (fromUser) {
@@ -94,11 +111,19 @@ public class KobeActivity extends AppCompatActivity {
                         }
                     }
 
+                    /**
+                     *
+                     * @param seekBar
+                     */
                     @Override
                     public void onStartTrackingTouch(SeekBar seekBar) {
 
                     }
 
+                    /**
+                     *
+                     * @param seekBar
+                     */
                     @Override
                     public void onStopTrackingTouch(SeekBar seekBar) {
 
@@ -111,17 +136,33 @@ public class KobeActivity extends AppCompatActivity {
         volumeBar = (SeekBar) findViewById(R.id.volumeBar);
         volumeBar.setOnSeekBarChangeListener(
                 new SeekBar.OnSeekBarChangeListener() {
+
+                    /**
+                     *
+                     * @param seekBar
+                     * @param progress
+                     * @param fromUser
+                     */
                     @Override
                     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                         float volumeNum = progress / 100f;
                         mp.setVolume(volumeNum, volumeNum);
                     }
 
+
+                    /**
+                     *
+                     * @param seekBar
+                     */
                     @Override
                     public void onStartTrackingTouch(SeekBar seekBar) {
 
                     }
 
+                    /**
+                     *
+                     * @param seekBar
+                     */
                     @Override
                     public void onStopTrackingTouch(SeekBar seekBar) {
 
@@ -129,6 +170,9 @@ public class KobeActivity extends AppCompatActivity {
                 }
         );
 
+        /**
+         * a new thread
+         */
         // Thread (Update positionBar & timeLabel)
         new Thread(new Runnable() {
             @Override
@@ -147,6 +191,12 @@ public class KobeActivity extends AppCompatActivity {
         button = (Button)findViewById(R.id.buttonList);
 
         button.setOnClickListener(new View.OnClickListener() {
+
+            /**
+             *
+             * @param v
+             * to pause the music if it is playing
+             */
             @Override
             public void onClick(View v) {
                 openSongsList();

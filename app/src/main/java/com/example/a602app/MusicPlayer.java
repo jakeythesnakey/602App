@@ -16,6 +16,14 @@ import java.util.ArrayList;
 
 public class MusicPlayer extends AppCompatActivity {
 
+
+    /**
+     * listView
+     * arrayList
+     * arrayAdapter
+     * mediaPlayer
+     * SONG_PLAYING
+     */
     ListView listView;
     ArrayList<String> arrayList;
 
@@ -24,7 +32,11 @@ public class MusicPlayer extends AppCompatActivity {
 
     public static String SONG_PLAYING;
 
-
+    /**
+     *
+     * @param savedInstanceState
+     * get all the songs listed
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +56,13 @@ public class MusicPlayer extends AppCompatActivity {
         listView.setAdapter(arrayAdapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            /**
+             *
+             * @param parent
+             * @param view
+             * @param i
+             * @param l
+             */
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
 
@@ -68,13 +87,18 @@ public class MusicPlayer extends AppCompatActivity {
 
     }
 
+    /**
+     *start activity
+     */
     public void openPlayerMedia(){
         Intent intent = new Intent(this, KobeActivity.class);
         startActivity(intent);
     }
 
 
-
+    /**
+     * stops music when push back
+     */
     @Override
     public void onBackPressed() {
         super.onBackPressed();
