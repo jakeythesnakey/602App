@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity()
     {
         var intent = Intent(this, YouTubeActivity::class.java)
         startActivity(intent)
+
     }
 
     fun clickedBtn2()//Open Kobe Activity

@@ -6,11 +6,13 @@ import android.support.test.espresso.action.ViewActions.click
 import android.support.test.espresso.matcher.ViewMatchers.withId
 import android.support.test.rule.ActivityTestRule
 import android.support.test.runner.AndroidJUnit4
+import org.junit.After
 
 import org.junit.Test
 import org.junit.runner.RunWith
 
 import org.junit.Assert.*
+import org.junit.Before
 import org.junit.Rule
 
 /**
@@ -25,6 +27,14 @@ class MainTest {
     @JvmField
     val rule: ActivityTestRule<MainActivity> = ActivityTestRule(MainActivity::class.java)
 
+    @Before
+    fun setUp() {
+    }
+
+    @After
+    fun tearDown() {
+    }
+
     @Test
     fun useAppContext() {
         // Context of the app under test.
@@ -36,6 +46,7 @@ class MainTest {
     fun user_press_button_1()
     {
         onView(withId(R.id.button1)).perform(click())
+
     }
 
     @Test

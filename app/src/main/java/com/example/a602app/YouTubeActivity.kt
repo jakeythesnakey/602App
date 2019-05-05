@@ -11,6 +11,7 @@ import android.widget.EditText
 import kotlinx.android.synthetic.main.activity_you_tube.*
 import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.content_you_tube.*
+import java.io.IOException
 
 class YouTubeActivity : AppCompatActivity()
 {
@@ -48,6 +49,14 @@ class YouTubeActivity : AppCompatActivity()
         newLink = YouTubeConnect(addressText.text.toString(), minuteText.text.toString().toInt(), secondText.text.toString().toInt())//sets up variables
         var openWebPage = Intent(Intent.ACTION_VIEW)//Creates new intent to open a new activity/screen
         openWebPage.data = Uri.parse(newLink.url)//sets the target of the new screen to the given youtube link
-        startActivity(openWebPage)//starts the new activity
+
+        if (openWebPage.resolveActivity(getPackageManager()) != null) {
+            startActivity(openWebPage)//starts the new activity
+        }
+        else{
+            addressText.setText("Not a YouTube address")
+        }
+        //startActivity(openWebPage)
+
     }
 }
