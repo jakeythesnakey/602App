@@ -11,6 +11,7 @@ import android.widget.EditText
 import kotlinx.android.synthetic.main.activity_you_tube.*
 import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.content_you_tube.*
+import java.io.IOException
 
 class YouTubeActivity : AppCompatActivity()
 {
@@ -38,7 +39,7 @@ class YouTubeActivity : AppCompatActivity()
     fun clickedBtn()//feed in a YTC object to bring up video
     {
         //Default data (I hope you like Brooklyn 99)
-        var newLink = YouTubeConnect("https://youtu.be/48uAQYf3Uhc?t=31", 8,2)
+        var newLink = YouTubeConnect("https://youtu.be/48uAQYf3Uhc", 8,2)
 
         //Attach variables to text input fields
         addressText = findViewById(R.id.address)
@@ -48,6 +49,13 @@ class YouTubeActivity : AppCompatActivity()
         newLink = YouTubeConnect(addressText.text.toString(), minuteText.text.toString().toInt(), secondText.text.toString().toInt())//sets up variables
         var openWebPage = Intent(Intent.ACTION_VIEW)//Creates new intent to open a new activity/screen
         openWebPage.data = Uri.parse(newLink.url)//sets the target of the new screen to the given youtube link
-        startActivity(openWebPage)//starts the new activity
+
+        if (openWebPage.resolveActivity(getPackageManager()) != null) {//Safely checks if activity will resolve correctly
+            startActivity(openWebPage)//starts the new activity
+        }
+        else{
+            addressText.setText("Not a YouTube address")
+        }
+
     }
 }

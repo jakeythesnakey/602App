@@ -4,7 +4,7 @@ package com.example.a602app
 class YouTubeConnect constructor(var _url: String, var _timeStamp: TimeStamp = TimeStamp(0,0)) {
 
     //Secondary constructor. Allows user to input integers instead of a TimeStamp object, dynamically creating the timestamp
-    constructor(newlr: String, secs: Int = 0, mins: Int = 0): this(newlr,  TimeStamp(secs, mins))
+    constructor(newlr: String, mins: Int = 0, secs: Int = 0): this(newlr,  TimeStamp(mins, secs))
 
     //Default url is google.com
     var url: String = "https://www.google.com/"
@@ -16,6 +16,11 @@ class YouTubeConnect constructor(var _url: String, var _timeStamp: TimeStamp = T
         this.url = _url
         this.timeStamp = _timeStamp
 
+        linkConstruct()
+    }
+
+    fun linkConstruct()
+    {
         //determines whether youtube link is a full address or a shortlink and applies syntax correctly
         var connector = "&t="
         if (!url.contains("?"))

@@ -10,23 +10,21 @@
         tools:context=".MainActivity">
 
     <Button
-            android:text="FirstButton"
             android:layout_width="0dp"
-            android:layout_height="285dp"
+            android:layout_height="270dp"
             android:id="@+id/button1" android:layout_marginTop="16dp"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="4dp" tools:textColor="#FFFFFF" android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent" android:background="@drawable/yt"/>
 
     <Button
-            android:text="SecondButton"
             android:layout_width="0dp"
-            android:layout_height="298dp"
+            android:layout_height="270dp"
             android:id="@+id/button2"
             tools:textColor="#FFFFFF"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
             app:layout_constraintHorizontal_bias="0.0" android:layout_marginTop="20dp"
-            app:layout_constraintTop_toBottomOf="@+id/button1"/>
+            app:layout_constraintTop_toBottomOf="@+id/button1" android:background="@drawable/house"/>
 
 </android.support.constraint.ConstraintLayout>
