@@ -20,7 +20,7 @@ import java.net.URISyntaxException;
 
 import static com.example.a602app.MusicPlayer.SONG_PLAYING;
 
-public class KobeActivity extends AppCompatActivity {
+public class PlayerActivity extends AppCompatActivity {
 //TestComment
     /**
      * @param playbtn

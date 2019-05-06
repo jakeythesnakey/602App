@@ -4,11 +4,10 @@ import org.junit.Test;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class KobeActivityTest {
+public class PlayerActivityTest {
 
     @Before
     public void setUp() throws Exception {
@@ -25,7 +24,7 @@ public class KobeActivityTest {
 
     @Test
     public void createTimeLabelTest() {
-        KobeActivity ka = new KobeActivity();
+        PlayerActivity ka = new PlayerActivity();
         String testTime = ka.createTimeLabel(120000);
 
         String expectedTime = "2:00";
@@ -40,7 +39,7 @@ public class KobeActivityTest {
 //
 //    @Test
 //    public void createTimeLabelTest() {
-//        KobeActivity ka = new KobeActivity();
+//        PlayerActivity ka = new PlayerActivity();
 //        String testTime = ka.createTimeLabel(120000);
 //
 //        String expectedTime = "2:00";
