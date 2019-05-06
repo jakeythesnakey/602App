@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class KobeActivityUnitTest {
+public class KobeActivityTest {
 
     @Before
     public void setUp() throws Exception {
@@ -34,5 +34,17 @@ public class KobeActivityUnitTest {
 
     @Test
     public void playBtnClick() {
+
     }
+
+//
+//    @Test
+//    public void createTimeLabelTest() {
+//        KobeActivity ka = new KobeActivity();
+//        String testTime = ka.createTimeLabel(120000);
+//
+//        String expectedTime = "2:00";
+//        assertEquals(expectedTime,testTime);
+//    }
+
 }

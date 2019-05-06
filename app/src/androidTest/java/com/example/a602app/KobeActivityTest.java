@@ -27,7 +27,7 @@ public class KobeActivityTest {
     public ActivityTestRule<KobeActivity> kobeActivityTestRule = new ActivityTestRule<KobeActivity>(KobeActivity.class);
     private KobeActivity kobeActivity = null;
 
-    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(MusicPlayer.class.getName(),null,false);
+    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(MusicPlayer.class.getName(), null, false);
 
 
     @Before
@@ -36,16 +36,15 @@ public class KobeActivityTest {
     }
 
     @Test
-    public void testLaunchOfClick(){
+    public void testLaunchOfClick() {
         assertNotNull(kobeActivity.findViewById(R.id.textViewName));
         onView(withId(R.id.textViewName)).perform(click());
 
-        getInstrumentation().waitForMonitorWithTimeout(monitor,5000);
-        Activity musicplayer =  getInstrumentation().waitForMonitorWithTimeout(monitor,5000);
+        getInstrumentation().waitForMonitorWithTimeout(monitor, 5000);
+        Activity musicplayer = getInstrumentation().waitForMonitorWithTimeout(monitor, 5000);
 
 
     }
-
 
 
     @After
