@@ -2,4 +2,6 @@
     <string name="app_name">602App</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_you_tube">YouTubeActivity</string>
+    <string name="widget_url_song">YouTube</string>
+    <string name="widget_local_song">Local</string>
 </resources>
