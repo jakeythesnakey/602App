@@ -2,6 +2,8 @@ package com.example.a602app;
 
 import android.app.Activity;
 import android.app.Instrumentation;
+import android.support.test.espresso.ViewAction;
+import android.support.test.espresso.action.ViewActions;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import org.junit.After;
@@ -13,6 +15,7 @@ import org.junit.runner.RunWith;
 import static android.support.test.InstrumentationRegistry.getInstrumentation;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
+import static android.support.test.espresso.matcher.ViewMatchers.isRoot;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static org.junit.Assert.*;
 
@@ -50,17 +53,18 @@ public class KobeActivityTest {
         kobeActivity = null;
     }
 
-//    @Test
-//    public void onBackPressed() {
-//    }
-//
-//    @Test
-//    public void onCreate() {
-//    }
-//
-//    @Test
-//    public void openSongsList() {
-//    }
+    /*@Test
+    public void onBackPressed() {
+        onView(isRoot()).perform(ViewActions.pressBack());
+    }*/
+
+
+    @Test
+    public void openSongsList() {
+        assertNotNull(kobeActivity.findViewById(R.id.textViewName));
+        onView(withId(R.id.textViewName)).perform(click());
+
+    }
 //
 //    @Test
 //    public void createTimeLabel() {
