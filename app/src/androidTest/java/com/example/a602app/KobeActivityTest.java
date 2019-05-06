@@ -41,6 +41,7 @@ public class KobeActivityTest {
         Activity musicplayer =  getInstrumentation().waitForMonitorWithTimeout(monitor,5000);
         assertNotNull(musicplayer);
         musicplayer.finish();
+
     }
 
 

@@ -21,7 +21,7 @@ import java.net.URISyntaxException;
 import static com.example.a602app.MusicPlayer.SONG_PLAYING;
 
 public class KobeActivity extends AppCompatActivity {
-
+//TestComment
     /**
      * @param playbtn
      * @param positionBar
@@ -202,6 +202,7 @@ public class KobeActivity extends AppCompatActivity {
             }
         }).start();
 
+        //click a button and triggers the function
         button = (Button)findViewById(R.id.buttonList);
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -220,7 +221,7 @@ public class KobeActivity extends AppCompatActivity {
 
     }
 
-
+//this method opens up the songs list
     public void openSongsList(){
         Intent intent = new Intent(this, MusicPlayer.class);
         startActivity(intent);
