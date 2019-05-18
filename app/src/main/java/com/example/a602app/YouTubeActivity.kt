@@ -9,6 +9,9 @@ import android.widget.EditText
 
 import kotlinx.android.synthetic.main.activity_you_tube.*
 import kotlinx.android.synthetic.main.content_you_tube.*
+import android.R.attr.data
+
+
 
 class YouTubeActivity : AppCompatActivity()
 {
@@ -25,6 +28,13 @@ class YouTubeActivity : AppCompatActivity()
         super.onCreate(savedInstanceState)//super called
         setContentView(R.layout.activity_you_tube)//attaches xml for buttons and labels etc
         setSupportActionBar(toolbar)//Attaches toolbar
+
+        if (this.intent != null && this.intent.extras != null) {//XXX FIX XXXX checks if there are extras attached to intent
+            val connectString = this.intent.getStringExtra("connection")
+            val connectArray = connectString.split(",")
+            val newConnect = YouTubeConnect(connectArray[0],connectArray[1].toInt(),connectArray[2].toInt())
+            launchYT(newConnect)
+        }
 
         //Set play button
         buttonLaunch.setOnClickListener {
@@ -44,6 +54,12 @@ class YouTubeActivity : AppCompatActivity()
         secondText = findViewById(R.id.seconds)
 
         newLink = YouTubeConnect(addressText.text.toString(), minuteText.text.toString().toInt(), secondText.text.toString().toInt())//sets up variables
+        launchYT(newLink)
+
+    }
+
+    fun launchYT(newLink : YouTubeConnect)
+    {
         var openWebPage = Intent(Intent.ACTION_VIEW)//Creates new intent to open a new activity/screen
         openWebPage.data = Uri.parse(newLink.url)//sets the target of the new screen to the given youtube link
 
@@ -53,6 +69,5 @@ class YouTubeActivity : AppCompatActivity()
         else{
             addressText.setText("Not a YouTube address")
         }
-
     }
 }
