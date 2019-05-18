@@ -25,7 +25,8 @@ class QuickSelect : AppCompatActivity() {
         //test
         var testYT = YouTubeConnect("https://www.youtube.com/watch?v=AD5qt7xoUU8", 1, 10)
         var intent = Intent(this, YouTubeActivity::class.java)
-        intent.putExtra("connection", testYT)
+        intent.putExtra("connection", testYT.toString())
         startActivity(intent)
 
     }
+}
