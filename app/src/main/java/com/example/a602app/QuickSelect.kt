@@ -6,6 +6,9 @@ import android.os.Bundle
 import android.widget.Button
 import kotlinx.android.synthetic.main.activity_quick_select.*
 import kotlinx.android.synthetic.main.content_main.*
+import org.xmlpull.v1.XmlPullParser
+import org.xmlpull.v1.XmlPullParserFactory
+import java.io.InputStream
 
 class QuickSelect : AppCompatActivity() {
 
@@ -19,6 +22,23 @@ class QuickSelect : AppCompatActivity() {
             var testYT = YouTubeConnect("https://www.youtube.com/watch?v=AD5qt7xoUU8", 1, 10)// TEST DATA
             clickedBtn(testYT)
         }
+
+        //button 2 tests storing YTC class in media_container.xml XXX TESTING XXX
+        this.mediabutton2.setOnClickListener {
+            //test
+            var testYT = YouTubeConnect("https://www.youtube.com/watch?v=AD5qt7xoUU8", 1, 10)// TEST DATA
+            saveXML(testYT)
+        }
+    }
+
+    //TODO: NOT WORKING FIX TOMORROW
+    fun saveXML(ytc : YouTubeConnect)
+    {
+        val parserFactory : XmlPullParserFactory = XmlPullParserFactory.newInstance()
+        val parser = parserFactory.newPullParser()
+        val inStream : InputStream = assets.open("test_app_widget_info.xml")
+        parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES,false)
+        parser.setInput(inStream, null)
 
     }
 
