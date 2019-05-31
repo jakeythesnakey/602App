@@ -5,7 +5,8 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".QuickSelect" android:id="@+id/quickselectlayout">
+        tools:context=".QuickSelect" android:id="@+id/quickselectlayout" android:background="#6973C4">
+
 
     <Button
             android:background="@drawable/smiling"
@@ -53,8 +54,9 @@
             android:layout_height="0dp"
             app:layout_constraintBottom_toTopOf="@id/mediabutton8"
             android:id="@+id/mediabutton5" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/mediabutton2" app:layout_constraintStart_toEndOf="@+id/mediabutton4"
-            android:layout_marginStart="8dp"  app:layout_constraintEnd_toStartOf="@+id/mediabutton6"
+            app:layout_constraintTop_toBottomOf="@+id/mediabutton2"
+            app:layout_constraintStart_toEndOf="@+id/mediabutton4"
+            android:layout_marginStart="8dp" app:layout_constraintEnd_toStartOf="@+id/mediabutton6"
             android:layout_marginEnd="8dp"
             app:layout_constraintHorizontal_bias="0.6"/>
 
@@ -64,7 +66,8 @@
             android:layout_height="0dp"
             app:layout_constraintBottom_toTopOf="@id/mediabutton9"
             android:id="@+id/mediabutton6" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/mediabutton3" app:layout_constraintStart_toEndOf="@+id/mediabutton5"
+            app:layout_constraintTop_toBottomOf="@+id/mediabutton3"
+            app:layout_constraintStart_toEndOf="@+id/mediabutton5"
             android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp"
             app:layout_constraintHorizontal_bias="0.6"/>
@@ -86,8 +89,9 @@
             android:layout_height="0dp"
             app:layout_constraintBottom_toTopOf="@id/homebutton"
             android:id="@+id/mediabutton8" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/mediabutton5" app:layout_constraintStart_toEndOf="@+id/mediabutton7"
-            android:layout_marginStart="8dp"  app:layout_constraintEnd_toStartOf="@+id/mediabutton9"
+            app:layout_constraintTop_toBottomOf="@+id/mediabutton5"
+            app:layout_constraintStart_toEndOf="@+id/mediabutton7"
+            android:layout_marginStart="8dp" app:layout_constraintEnd_toStartOf="@+id/mediabutton9"
             android:layout_marginEnd="8dp"
             app:layout_constraintHorizontal_bias="0.6"/>
 
@@ -96,7 +100,8 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:id="@+id/mediabutton9" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/mediabutton6" app:layout_constraintStart_toEndOf="@+id/mediabutton8"
+            app:layout_constraintTop_toBottomOf="@+id/mediabutton6"
+            app:layout_constraintStart_toEndOf="@+id/mediabutton8"
             android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@id/homebutton"
             android:layout_marginEnd="8dp"
@@ -116,7 +121,7 @@
             tools:textColor="#FFFFFF"
             android:layout_marginEnd="8dp"
 
-            />
+    />
 
     <Button
             android:background="@drawable/local"
@@ -131,8 +136,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
-            />
-
+    />
 
 
 </android.support.constraint.ConstraintLayout>
