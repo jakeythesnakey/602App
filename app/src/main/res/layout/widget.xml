@@ -4,26 +4,36 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="horizontal"
-              android:weightSum="2">
+              android:weightSum="3">
 
     <Button
             style="?android:attr/buttonBarButtonStyle"
             android:id="@+id/url_button"
             android:layout_weight="1"
             android:text="@string/widget_url_song"
-            android:textSize="20sp"
+            android:textSize="17sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-    />
+            android:padding="1dp"
+            android:textColor="@android:color/black"/>
+    <Button
+            style="?android:attr/buttonBarButtonStyle"
+            android:id="@+id/main_button"
+            android:layout_weight="1"
+            android:text="@string/widget_main_song"
+            android:textSize="17sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="1dp"
+            android:textColor="@android:color/black"/>
     <Button
             style="?android:attr/buttonBarButtonStyle"
             android:id="@+id/local_button"
             android:layout_weight="1"
             android:text="@string/widget_local_song"
-            android:textSize="20sp"
+            android:textSize="17sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-    />
+            android:padding="1dp"
+            android:textColor="@android:color/black"/>
 </LinearLayout>

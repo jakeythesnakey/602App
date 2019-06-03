@@ -4,4 +4,12 @@
     <string name="title_activity_you_tube">YouTubeActivity</string>
     <string name="widget_url_song">YouTube</string>
     <string name="widget_local_song">Local</string>
+    <string name="widget_main_song">Main</string>
+    <string name="youtube_url_error">Not a YouTube address</string>
+    <string name="youtube_video_address">YouTube Video Address</string>
+    <string name="minutes">Minutes</string>
+    <string name="seconds">Seconds</string>
+    <string name="launch_video">Launch Video</string>
+    <string name="save_to_button">Save To Button</string>
+    <string name="button_index">Button Index</string>
 </resources>

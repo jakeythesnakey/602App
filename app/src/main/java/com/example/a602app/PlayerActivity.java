@@ -64,15 +64,9 @@ public class PlayerActivity extends AppCompatActivity {
         elapsedTimeLabel = (TextView) findViewById(R.id.elapsedTimeLabel);
         remainingTimeLabel = (TextView) findViewById(R.id.remainingTimeLabel);
 
-
-
         TextView textView;
         textView = findViewById(R.id.textViewName);
         textView.setText(SONG_PLAYING);
-
-
-
-
 
         // Media Player
         String s = music;
