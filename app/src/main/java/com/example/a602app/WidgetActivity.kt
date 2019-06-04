@@ -19,24 +19,22 @@ class WidgetActivity : AppWidgetProvider() {
             val pendingIntent1: PendingIntent = Intent(context, ActivityRdr1::class.java)
                 .let { intent -> PendingIntent.getActivity(context, 0, intent, 0)}
 
-            val pendingIntent2: PendingIntent = Intent(context, QuickSelect::class.java)
+            val pendingIntent2: PendingIntent = Intent(context, ActivityRdr2::class.java)
                 .let { intent -> PendingIntent.getActivity(context, 0, intent, 0)}
-            val pendingIntent3: PendingIntent = Intent(context, QuickSelect::class.java)
+            val pendingIntent3: PendingIntent = Intent(context, ActivityRdr3::class.java)
                 .let { intent -> PendingIntent.getActivity(context, 0, intent, 0)}
-            val pendingIntent4: PendingIntent = Intent(context, YouTubeActivity::class.java)
+            val pendingIntent4: PendingIntent = Intent(context, ActivityRdr4::class.java)
                 .let { intent -> PendingIntent.getActivity(context, 0, intent, 0)}
-            val pendingIntent5: PendingIntent = Intent(context, QuickSelect::class.java)
+            val pendingIntent5: PendingIntent = Intent(context, ActivityRdr5::class.java)
                 .let { intent -> PendingIntent.getActivity(context, 0, intent, 0)}
-            val pendingIntent6: PendingIntent = Intent(context, YouTubeActivity::class.java)
+            val pendingIntent6: PendingIntent = Intent(context, ActivityRdr6::class.java)
                 .let { intent -> PendingIntent.getActivity(context, 0, intent, 0)}
-            val pendingIntent7: PendingIntent = Intent(context, QuickSelect::class.java)
+            val pendingIntent7: PendingIntent = Intent(context, ActivityRdr7::class.java)
                 .let { intent -> PendingIntent.getActivity(context, 0, intent, 0)}
-            val pendingIntent8: PendingIntent = Intent(context, YouTubeActivity::class.java)
+            val pendingIntent8: PendingIntent = Intent(context, ActivityRdr8::class.java)
                 .let { intent -> PendingIntent.getActivity(context, 0, intent, 0)}
-            val pendingIntent9: PendingIntent = Intent(context, QuickSelect::class.java)
+            val pendingIntent9: PendingIntent = Intent(context, ActivityRdr9::class.java)
                 .let { intent -> PendingIntent.getActivity(context, 0, intent, 0)}
-
-
             // Get the layout for the App Widget and attach an on-click listener
             // to the button
             val views: RemoteViews = RemoteViews(context.packageName, R.layout.widget).apply {
